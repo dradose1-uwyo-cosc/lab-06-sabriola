@@ -1,12 +1,9 @@
-# Your Name Here
-# UWYO COSC 1010
-# Submission Date
-# Lab 06
-# Lab Section: 
-# Sources, people worked with, help given to: 
-# your
-# comments
-# here
+#Serina Abriola
+#UWYO COSC 1010
+#Submission Date: 10/20/24
+#Lab 06
+#Lab Section: 16
+#Sources: Lecture 9
 
 
 random_string = """
@@ -83,13 +80,21 @@ print(len(random_string)) # Print out the size for reference
 #Load all the elements into a dictionary
 #Will need to first declare a dictionary 
 
+count_char = {}
+for character in random_string:
+    if character in count_char:
+        count_char[character] += 1
+    else:
+        count_char[character] = 1
+
 # Output: each letter and its corresponding occurrence in alphabetical order
-
+sorted_char = sorted(count_char.items())
+print("Each letter and correspinding occurance in alphabetical order:", (sorted_char))
 print("*"*75)
-# Output which letter occurred the most 
 
-most_occurred = ""
-least_occurred = ""
+# Output which letter occurred the most 
+most_occurred = max(count_char, key=count_char.get)
+least_occurred = min(count_char, key=count_char.get)
 
 print(f"The letter that occurred the most is {most_occurred}")
 print("*"*75)
@@ -98,3 +103,7 @@ print(f"The letter that occurred the most is {least_occurred}")
 print("*"*75)
 
 # Output what the percentage of the string each character is, again in alphabetical
+total_characters = len(random_string)
+for character,count in sorted_char:
+    percentage = (count/total_characters)*100
+    print(f"{character} ({percentage:.2f}%)")
