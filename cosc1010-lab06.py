@@ -94,11 +94,11 @@ print("*"*75)
 
 # Output which letter occurred the most 
 most_occurred = max(count_char, key=count_char.get)
-least_occurred = min(count_char, key=count_char.get)
-
 print(f"The letter that occurred the most is {most_occurred}")
 print("*"*75)
-# Output which letter occurred the least 
+
+# Output which letter occurred the least
+least_occurred = min(count_char, key=count_char.get)
 print(f"The letter that occurred the most is {least_occurred}")
 print("*"*75)
 
